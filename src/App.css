@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
+.wrapper {
+  background-color: #ccc;
+  position: relative;
+}
+.burger {
+  position: absolute;
+  width: 110px;
+  object-fit: cover;
+  right: 0px;
+  top: -10px;
+  z-index: 1;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background-color: #3bf33b;
+}
+.advert {
+  position: relative;
+}
+.advert h2 {
+  color: #000;
+}
+.advert span {
+  position: absolute;
+  right: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+.searchbar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+.searchbar h2 {
+  display: none;
+}
+form {
+  flex: 1;
+}
+.logo {
+  background-color: #3bf33b;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search {
+  padding: 10px 5px;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  font-size: 18px;
+  outline: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form {
+  position: relative;
 }
+.submit {
+  padding: 10px 5px;
+  border-radius: 0 30px 30px 0;
+  font-size: 18px;
+  color: #fff;
+  background-color: #3bf33b;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 10px;
+  background-color: #eee;
+}
+.refine {
+  color: grey;
+}
+select {
+  border: none;
+  background-color: transparent;
+  color: #3bf33b;
+  outline: none;
+}
+.recipecard {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+.card {
+  border: 1px solid #ccc;
+  width: 300px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
+.card img {
+  width: 100%;
+  height: auto;
+}
+.desc {
+  padding: 10px;
+}
+.label {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+.source {
+  font-size: 20px;
+  color: grey;
+}
+/*loading effect*/
+.spin {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 6px solid #ddd;
+  margin: auto;
+  margin-top: 200px;
+  border-top: 6px solid #ccc;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+.error {
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  .searchbar {
+    justify-content: center;
+    align-items: center;
+  }
+  .searchbar h2 {
+    display: block;
+    color: #62f062;
+    font-size: 30px;
+  }
+  .filter {
+    font-size: 16px;
+  }
+  select {
+    font-size: 16px;
+  }
+  .recipecard {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+  }
+  .card {
+    height: 400px;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  .searchbar {
+    justify-content: center;
+    align-items: center;
+  }
+  .searchbar h2 {
+    display: block;
+    color: #62f062;
+    font-size: 30px;
+  }
+  .filter {
+    font-size: 16px;
+  }
+  select {
+    font-size: 16px;
+  }
+  .recipecard {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+  }
+  .card {
+    height: 400px;
+    overflow: hidden;
   }
 }
